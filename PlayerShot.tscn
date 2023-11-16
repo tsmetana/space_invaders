@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd0k41hf3agr5"]
+
+[ext_resource type="Script" path="res://PlayerShot.gd" id="1_ruwo7"]
+[ext_resource type="Texture2D" uid="uid://de3xcqkf2p5r8" path="res://assets/image/tile_set.png" id="2_70v48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cn351"]
+size = Vector2(2, 8)
+
+[node name="PlayerShot" type="Area2D"]
+script = ExtResource("1_ruwo7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cn351")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_70v48")
+region_enabled = true
+region_rect = Rect2(9, 64, 8, 8)

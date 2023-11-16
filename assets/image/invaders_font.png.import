@@ -1,0 +1,21 @@
+[remap]
+
+importer="font_data_image"
+type="FontFile"
+uid="uid://b68h7u47aj2k2"
+path="res://godot/imported/invaders_font.png-ef2e63221e9a55b73fde5a100b5a88c8.fontdata"
+
+[deps]
+
+source_file="res://assets/image/invaders_font.png"
+dest_files=["res://godot/imported/invaders_font.png-ef2e63221e9a55b73fde5a100b5a88c8.fontdata"]
+
+[params]
+
+character_ranges=PackedStringArray("0-127")
+columns=16
+rows=8
+image_margin=Rect2i(0, 0, 0, 0)
+character_margin=Rect2i(0, 0, 0, 0)
+fallbacks=[]
+compress=true

@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmrhlkhmnnlqu"]
+
+[ext_resource type="Script" path="res://GameScene.gd" id="1_rybut"]
+[ext_resource type="PackedScene" uid="uid://br2sum5brivk3" path="res://Player.tscn" id="2_8lnw6"]
+[ext_resource type="PackedScene" uid="uid://cs7rjg2mpb5su" path="res://House.tscn" id="3_y6mx3"]
+[ext_resource type="Texture2D" uid="uid://de3xcqkf2p5r8" path="res://assets/image/tile_set.png" id="4_p67am"]
+[ext_resource type="FontFile" uid="uid://b68h7u47aj2k2" path="res://assets/image/invaders_font.png" id="5_a038w"]
+[ext_resource type="AudioStream" uid="uid://8sigl80pay8n" path="res://assets/sounds/invader_move.wav" id="6_5m4ks"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ub0h"]
+font_size = 8
+
+[node name="GameScreen" type="Node2D"]
+script = ExtResource("1_rybut")
+
+[node name="Player" parent="." instance=ExtResource("2_8lnw6")]
+position = Vector2(60, 220)
+
+[node name="House1" parent="." instance=ExtResource("3_y6mx3")]
+position = Vector2(44, 196)
+
+[node name="House2" parent="." instance=ExtResource("3_y6mx3")]
+position = Vector2(108, 196)
+
+[node name="House3" parent="." instance=ExtResource("3_y6mx3")]
+position = Vector2(180, 196)
+
+[node name="House4" parent="." instance=ExtResource("3_y6mx3")]
+position = Vector2(244, 196)
+
+[node name="LifeIndicator1" type="Sprite2D" parent="."]
+position = Vector2(12, 236)
+texture = ExtResource("4_p67am")
+region_enabled = true
+region_rect = Rect2(0, 56, 8, 8)
+
+[node name="LifeIndicator2" type="Sprite2D" parent="."]
+position = Vector2(28, 236)
+texture = ExtResource("4_p67am")
+region_enabled = true
+region_rect = Rect2(0, 56, 8, 8)
+
+[node name="ScoreLabel" type="Label" parent="."]
+modulate = Color(1, 1, 0, 1)
+offset_right = 56.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_a038w")
+text = "SCORE: "
+label_settings = SubResource("LabelSettings_8ub0h")
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreValueLabel" type="Label" parent="."]
+modulate = Color(1, 1, 0, 1)
+offset_left = 48.0
+offset_right = 56.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("5_a038w")
+text = "0"
+label_settings = SubResource("LabelSettings_8ub0h")
+metadata/_edit_use_anchors_ = true
+
+[node name="InvadersMoveSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5m4ks")

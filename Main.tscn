@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://wafe1gvuy6u0"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_2mar2"]
+[ext_resource type="Texture2D" uid="uid://dr36ei8piiww7" path="res://assets/image/fire_btn.png" id="2_fgosc"]
+[ext_resource type="Texture2D" uid="uid://28vn1wbd3q1j" path="res://assets/image/left_btn.png" id="3_cy4kk"]
+[ext_resource type="Texture2D" uid="uid://boil358xxlq3c" path="res://assets/image/right_btn.png" id="4_kxiys"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h70w5"]
+radius = 40.0
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_dj0n0"]
+points = PackedVector2Array(0, -40, 40, -40, 40, 40, 0, 40, -40, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wr3v1"]
+radius = 40.0
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cobib"]
+points = PackedVector2Array(-40, -40, 0, -40, 40, 0, 0, 40, -40, 40)
+
+[node name="Main" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_2mar2")
+
+[node name="LeftMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftContainer" type="VBoxContainer" parent="LeftMarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+
+[node name="LeftFireButton" type="TouchScreenButton" parent="LeftMarginContainer/LeftContainer"]
+position = Vector2(1, -164)
+texture_normal = ExtResource("2_fgosc")
+shape = SubResource("CircleShape2D_h70w5")
+action = "fire"
+visibility_mode = 1
+
+[node name="LeftButton" type="TouchScreenButton" parent="LeftMarginContainer/LeftContainer"]
+position = Vector2(1, -82)
+scale = Vector2(1.0125, 1)
+texture_normal = ExtResource("3_cy4kk")
+shape = SubResource("ConvexPolygonShape2D_dj0n0")
+action = "left"
+visibility_mode = 1
+
+[node name="MiddleContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(320, 240)
+layout_mode = 2
+
+[node name="RightMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightContainer" type="VBoxContainer" parent="RightMarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+
+[node name="RightFireButton" type="TouchScreenButton" parent="RightMarginContainer/RightContainer"]
+position = Vector2(-81, -162)
+texture_normal = ExtResource("2_fgosc")
+shape = SubResource("CircleShape2D_wr3v1")
+action = "fire"
+visibility_mode = 1
+
+[node name="RightButton" type="TouchScreenButton" parent="RightMarginContainer/RightContainer"]
+position = Vector2(-81, -81)
+texture_normal = ExtResource("4_kxiys")
+shape = SubResource("ConvexPolygonShape2D_cobib")
+action = "right"
+visibility_mode = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

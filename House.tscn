@@ -1,0 +1,269 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs7rjg2mpb5su"]
+
+[ext_resource type="Texture2D" uid="uid://de3xcqkf2p5r8" path="res://assets/image/tile_set.png" id="1_hd3a0"]
+[ext_resource type="Script" path="res://HouseBlock.gd" id="1_rqicf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pxxr"]
+size = Vector2(8, 8)
+
+[node name="House" type="Node2D"]
+
+[node name="HouseBlock1" type="Area2D" parent="."]
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock1"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock1"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock2" type="Area2D" parent="."]
+position = Vector2(8, 0)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock2"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock2"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock3" type="Area2D" parent="."]
+position = Vector2(16, 0)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock3"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock3"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock4" type="Area2D" parent="."]
+position = Vector2(24, 0)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock4"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock4"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock5" type="Area2D" parent="."]
+position = Vector2(32, 0)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock5"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock5"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock6" type="Area2D" parent="."]
+position = Vector2(0, -8)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock6"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock6"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock7" type="Area2D" parent="."]
+position = Vector2(8, -8)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock7"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock7"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock8" type="Area2D" parent="."]
+position = Vector2(16, -8)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock8"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock8"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock9" type="Area2D" parent="."]
+position = Vector2(24, -8)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock9"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock9"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock10" type="Area2D" parent="."]
+position = Vector2(32, -8)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock10"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock10"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock11" type="Area2D" parent="."]
+position = Vector2(0, -16)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock11"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock11"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock12" type="Area2D" parent="."]
+position = Vector2(8, -16)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock12"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock12"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock13" type="Area2D" parent="."]
+position = Vector2(16, -16)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock13"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock13"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock14" type="Area2D" parent="."]
+position = Vector2(24, -16)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock14"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock14"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock15" type="Area2D" parent="."]
+position = Vector2(32, -16)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock15"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock15"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock16" type="Area2D" parent="."]
+position = Vector2(0, -24)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock16"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock16"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 48, 8, 8)
+
+[node name="HouseBlock17" type="Area2D" parent="."]
+position = Vector2(8, -24)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock17"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock17"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock18" type="Area2D" parent="."]
+position = Vector2(16, -24)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock18"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock18"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock19" type="Area2D" parent="."]
+position = Vector2(24, -24)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock19"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock19"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 32, 8, 8)
+
+[node name="HouseBlock20" type="Area2D" parent="."]
+position = Vector2(32, -24)
+script = ExtResource("1_rqicf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBlock20"]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="HouseBlock20"]
+texture = ExtResource("1_hd3a0")
+region_enabled = true
+region_rect = Rect2(0, 40, 8, 8)
+
+[connection signal="area_entered" from="HouseBlock1" to="HouseBlock1" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock2" to="HouseBlock2" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock3" to="HouseBlock3" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock4" to="HouseBlock4" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock5" to="HouseBlock5" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock6" to="HouseBlock6" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock7" to="HouseBlock7" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock8" to="HouseBlock8" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock9" to="HouseBlock9" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock10" to="HouseBlock10" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock11" to="HouseBlock11" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock12" to="HouseBlock12" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock13" to="HouseBlock13" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock14" to="HouseBlock14" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock15" to="HouseBlock15" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock16" to="HouseBlock16" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock17" to="HouseBlock17" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock18" to="HouseBlock18" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock19" to="HouseBlock19" method="_on_area_entered"]
+[connection signal="area_entered" from="HouseBlock20" to="HouseBlock20" method="_on_area_entered"]

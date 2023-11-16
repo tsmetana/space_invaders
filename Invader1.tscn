@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://c8p2uhin3lmq4"]
+
+[ext_resource type="Script" path="res://Invader.gd" id="1_2rfa0"]
+[ext_resource type="Texture2D" uid="uid://de3xcqkf2p5r8" path="res://assets/image/tile_set.png" id="2_iejg1"]
+[ext_resource type="AudioStream" uid="uid://c3stpkf8y6b4a" path="res://assets/sounds/invader_shot.wav" id="3_wrose"]
+[ext_resource type="AudioStream" uid="uid://c25yf7mu8pa8j" path="res://assets/sounds/invader_explosion.wav" id="4_iatyf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibneg"]
+atlas = ExtResource("2_iejg1")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yflxl"]
+atlas = ExtResource("2_iejg1")
+region = Rect2(8, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_141t8"]
+atlas = ExtResource("2_iejg1")
+region = Rect2(8, 56, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6rrh"]
+atlas = ExtResource("2_iejg1")
+region = Rect2(16, 56, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itenu"]
+atlas = ExtResource("2_iejg1")
+region = Rect2(24, 56, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjny6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibneg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yflxl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_141t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6rrh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itenu")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pxxr"]
+size = Vector2(6, 8)
+
+[node name="Invader1" type="Area2D"]
+script = ExtResource("1_2rfa0")
+metadata/Value = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cjny6")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="ShotSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wrose")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_iatyf")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

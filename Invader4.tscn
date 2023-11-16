@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://0hy56nmabc31"]
+
+[ext_resource type="Script" path="res://Invader.gd" id="1_yde3v"]
+[ext_resource type="Texture2D" uid="uid://de3xcqkf2p5r8" path="res://assets/image/tile_set.png" id="2_kq1i4"]
+[ext_resource type="AudioStream" uid="uid://e0hx44c4qkg4" path="res://assets/sounds/invader4_enters.wav" id="3_kqaur"]
+[ext_resource type="AudioStream" uid="uid://c25yf7mu8pa8j" path="res://assets/sounds/invader_explosion.wav" id="4_7b6kv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pxxr"]
+size = Vector2(8, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uxbk"]
+atlas = ExtResource("2_kq1i4")
+region = Rect2(0, 24, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao4a6"]
+atlas = ExtResource("2_kq1i4")
+region = Rect2(8, 56, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idcmy"]
+atlas = ExtResource("2_kq1i4")
+region = Rect2(16, 56, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmfqo"]
+atlas = ExtResource("2_kq1i4")
+region = Rect2(24, 56, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01xsl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uxbk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ao4a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idcmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmfqo")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 5.0
+}]
+
+[node name="Invader4" type="Area2D"]
+script = ExtResource("1_yde3v")
+metadata/Value = 250
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_4pxxr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_01xsl")
+
+[node name="EnterScreenSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kqaur")
+autoplay = true
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_7b6kv")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
