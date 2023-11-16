@@ -1,6 +1,6 @@
-android*
-godot*
-export*
+android/*
+godot/*
+export/*
 export_presets.cfg
 *.apk
 *.apk.zip
